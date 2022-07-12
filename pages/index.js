@@ -21,6 +21,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(app);
 
+
 const db = getDatabase();
 const counterRef = ref(db, 'counter/');
 
@@ -40,7 +41,7 @@ export default function Home() {
   } 
   
   if(count === 0) {
-    window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; 
+    window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
   }
 
   return (
