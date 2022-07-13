@@ -26,7 +26,7 @@ const db = getDatabase();
 const counterRef = ref(db, 'counter/');
 
 export default function Home() {
-  const [count, setCount] = useState(10000);
+  const [count, setCount] = useState(1000000);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
