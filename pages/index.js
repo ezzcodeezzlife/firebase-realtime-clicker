@@ -27,12 +27,14 @@ const counterRef = ref(db, 'counter/');
 
 export default function Home() {
   const [count, setCount] = useState(10000);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     onValue(counterRef, (snapshot) => {
       const data = snapshot.val();
-      setCount( data.counter);
+      setCount(data.counter);
       console.log("Data changed")
+      setLoading(false);
     });
   }, []);
 
@@ -44,7 +46,14 @@ export default function Home() {
     window.location.replace('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
   }
 
+  if(loading) {
+    return <div className='h-screen w-screen select-none flex flex-col justify-center items-center  bg-slate-800 active:bg-slate-900'>
+    <div className='font-bold shadow-slate-500 text-6xl text-slate-300'>loading...</div>
+  </div>
+  }
+
   return (
+   
     <div onClick={()=>{ decrement() }} className='h-screen w-screen select-none flex flex-col justify-center items-center  bg-slate-800 active:bg-slate-900'>
       <div className='font-bold shadow-slate-500 text-6xl text-slate-300'>{count}</div>
       <div className='animate-ping text-slate-500'>click me</div>
