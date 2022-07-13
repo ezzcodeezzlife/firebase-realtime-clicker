@@ -58,7 +58,7 @@ export default function Home() {
       <div className='font-bold shadow-slate-500 text-6xl text-slate-300'>{count}</div>
       <div className='animate-ping text-slate-500'>click me</div>
       <div className='text-slate-500'>already clicked:</div>
-      <div className='font-bold shadow-slate-500 text-3xl text-slate-300'>{ 10000 - count }</div>
+      <div className='font-bold shadow-slate-500 text-3xl text-slate-300'>{ 1000000 - count }</div>
     </div>
   )
 }
